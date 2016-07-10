@@ -6,7 +6,7 @@ require("script!./js_loads/underscore.js")
 
 var ReactDOM = require('react-dom')
 var React = require('react')
-var Router = require('./components/router')
+var Index = require('./components/index')
 var createStore = require("redux").createStore
 var applyMiddleware = require("redux").applyMiddleware
 var Provider = require("react-redux").Provider
@@ -21,4 +21,4 @@ var user_id=parseInt(localStorage.user_id);
 if (user_id) {
     store.dispatch(actions.load_user_data());
 }
-ReactDOM.render( <Provider store={store}><Router/></Provider> , document.getElementById('content'))
+ReactDOM.render( <Provider store={store}><Index /></Provider> , document.getElementById('content'))
