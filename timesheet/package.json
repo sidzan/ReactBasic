@@ -1,0 +1,11 @@
+{
+  "name": "timesheet",
+  "version": "1.0.0",
+  "description": "record timesheet",
+  "main": "react_start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sijan",
+  "license": "MIT"
+}
