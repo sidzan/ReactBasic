@@ -2,6 +2,7 @@
 'use strict'
 
 var React = require('react')
+var utils = require('../utils')
 var connect = require("react-redux").connect
 
 var Login = React.createClass({
@@ -14,11 +15,7 @@ var Login = React.createClass({
     componentDidMount: function() {
     },
 	render: function() {
-            if (this.props.user_data){
-                if (this.context.history.isActive("login")){
-                    window.location = '/account/orders';
-                }
-            }
+            console.log(">>>render.login")
     		return <div className="form-horizontal">
             {function() {
                 if (!this.state.error) return;
@@ -51,6 +48,10 @@ var Login = React.createClass({
         this.setState({loading:true});
         this.props.dispatch(actions.login(email,password,(err)=>{
             console.log("XXX err",err);
+            console.log("should change",utils.get_cookie("user_id"),"value");
+            if (utils.get_cookie("user_id")){ 
+            console.log("should change")
+            window.location = "/home";}
             this.setState({loading:false,error:err});
         }));
     },

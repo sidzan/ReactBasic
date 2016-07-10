@@ -1,4 +1,4 @@
-var server_base_url="https://paleorobbie.netforce.com";
+var server_base_url="http://localhost:9999";
 
 module.exports.execute=function (model,method,args,opts,cb) {
     console.log("RPC",model,method,args,opts);
