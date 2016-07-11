@@ -24,7 +24,7 @@ var Layout = React.createClass({
                 </div>
                 <div className="collapse navbar-collapse" id="myNavbar">
                   <ul className="nav navbar-nav">
-                    <li className="active"><a href="#">Netforce</a></li>
+                    <li jclassName="active"><a href="#">Netforce</a></li>
                   </ul>
                   <ul className="nav navbar-nav navbar-right">
                     {function (){

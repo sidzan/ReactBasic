@@ -29015,7 +29015,7 @@
 	                ), 
 	                React.createElement("div", {className: "collapse navbar-collapse", id: "myNavbar"}, 
 	                  React.createElement("ul", {className: "nav navbar-nav"}, 
-	                    React.createElement("li", {className: "active"}, React.createElement("a", {href: "#"}, "Netforce"))
+	                    React.createElement("li", {jclassName: "active"}, React.createElement("a", {href: "#"}, "Netforce"))
 	                  ), 
 	                  React.createElement("ul", {className: "nav navbar-nav navbar-right"}, 
 	                    function (){
