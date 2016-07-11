@@ -24,6 +24,7 @@ var TimesheetForm=React.createClass({
             this.setState({resource:res})
         }.bind(this));
     },
+
     render:function() {
     console.log(this.props,"timesheet",this.state)
     var p  = this.props;
@@ -31,10 +32,10 @@ var TimesheetForm=React.createClass({
     if (!d.project) {return <Loading/>}
     var ds = {'waiting_approval':'Waiting Approval'}
     var project = _.map(this.state.project,function(dataItem){
-        return <option value={dataItem.id}>{dataItem.name}</option>
+        return <option key={dataItem.id} value={dataItem.id}>{dataItem.name}</option>
     })
     var resource = _.map(this.state.resource,function(dataItem){
-        return <option value={dataItem.id}>{dataItem.name}</option>
+        return <option key={dataItem.id} value={dataItem.id}>{dataItem.name}</option>
     })
     return <div>
             <form ref="work_time_form" onSubmit={this.submit} className="jumbotron col-sm-4">
@@ -59,8 +60,8 @@ var TimesheetForm=React.createClass({
                 </div>
                 <div className="form-group">
                     <DateField
-                        dateFormat="YYYY-MM-DD"
-                      onChange={this.onDateChange}
+                          dateFormat="YYYY-MM-DD"
+                          onChange={this.onDateChange}
                           />
                 </div>
                 <button onSubmit={this.submit} type="submit" className="btn btn-default">Submit</button>
@@ -68,6 +69,7 @@ var TimesheetForm=React.createClass({
     </div>
     },
     description:function(e){
+        console.log(e)
         this.setState({description:e.target.value});
     },
     actual_hours:function(e){

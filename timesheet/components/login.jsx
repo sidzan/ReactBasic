@@ -12,9 +12,10 @@ var Login = React.createClass({
     getInitialState : function(){
         return {};
     },
-    componentDidMount: function() {
-    },
 	render: function() {
+            if (utils.get_cookie("user_id")){
+                window.location = "/home"
+                }
             console.log(">>>render.login")
     		return <div className="form-horizontal">
             {function() {
@@ -47,10 +48,7 @@ var Login = React.createClass({
         var password=this.refs.password.value;
         this.setState({loading:true});
         this.props.dispatch(actions.login(email,password,(err)=>{
-            console.log("XXX err",err);
-            console.log("should change",utils.get_cookie("user_id"),"value");
             if (utils.get_cookie("user_id")){ 
-            console.log("should change")
             window.location = "/home";}
             this.setState({loading:false,error:err});
         }));

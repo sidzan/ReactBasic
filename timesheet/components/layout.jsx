@@ -20,11 +20,11 @@ var Layout = React.createClass({
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span> 
                   </button>
-                  <a className="navbar-brand" href="#">TimeSheet</a>
+                  <a className="navbar-brand" href="#">REact</a>
                 </div>
                 <div className="collapse navbar-collapse" id="myNavbar">
                   <ul className="nav navbar-nav">
-                    <li className="active"><a href="#">Home</a></li>
+                    <li className="active"><a href="#">Netforce</a></li>
                   </ul>
                   <ul className="nav navbar-nav navbar-right">
                     {function (){

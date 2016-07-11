@@ -15,7 +15,7 @@ var Index = React.createClass({
     render: function() {
         return <Router history={history}>
             <Route path="/" component={Layout}>
-                <IndexRedirect to="/home" />
+                <IndexRedirect to="/login" />
                 <Route path="login" component={Login}/>
                 <Route path="home" component={Home}/>
             </Route>

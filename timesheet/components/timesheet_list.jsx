@@ -5,34 +5,34 @@ var utils = require('../utils')
 var Table = require ('react-bootstrap').Table
 var TimesheetList=React.createClass({
     render() {
-    console.log(this.props,"timesheet")
+    console.log(this.props,"timesheet >>>>data")
     var p  = this.props;
     if (p.time_sheet_loading) return <Loading/>
     var ds = {'waiting_approval':'Waiting Approval'}
     return <div>
         <Table>
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Description</th>
-                <th>Project Name</th>
-                <th>State</th>
-                <th>Actual Hours</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-        {p.time_sheet.map(function(d){
-        return  <tr key={d.id}>
-            <td>{d.date}</td>
-            <td>{d.description}</td>
-            <td>{d.project_id.name}</td>
-            <td>{ds[d.state]}</td>
-            <td>{d.actual_hours}</td>
-            <td style={{cursor:'pointer'}}onClick={this.delete_record.bind(this,d.id)}>X</td>
-            </tr>
-        }.bind(this))}
-        </tbody>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Project Name</th>
+                    <th>State</th>
+                    <th>Actual Hours</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {p.time_sheet.map(function(d){
+                return  <tr key={d.id}>
+                    <td>{d.date}</td>
+                    <td>{d.description}</td>
+                    <td>{d.project_id.name}</td>
+                    <td>{ds[d.state]}</td>
+                    <td>{d.actual_hours}</td>
+                    <td style={{cursor:'pointer'}}onClick={this.delete_record.bind(this,d.id)}>X</td>
+                    </tr>
+            }.bind(this))}
+            </tbody>
         </Table>
     </div>
     },
